@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DriveX - premium car rental, vehicle sharing and car service platform.">
+  <title>DriveX | Rent. Share. Drive.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <header class="navbar">
+    <a class="brand" href="#home" aria-label="DriveX Home">
+      <span class="brand-mark">DX</span>
+      <span>DRIVE<span>X</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#rent">Rent a Car</a>
+      <a href="#list">List Your Car</a>
+      <a href="#services">Services & Contact</a>
+      <button class="nav-login" id="openLogin">Sign In</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section class="hero page-section" id="home">
+      <div class="hero-copy">
+        <div class="pill"><span class="dot"></span> PREMIUM CAR MOBILITY</div>
+        <h1>Drive your way.<br><em>Earn when parked.</em></h1>
+        <p class="hero-sub">Rent a car when you need one or list your unused vehicle and turn idle time into an opportunity.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#rent">Find a Car <span>→</span></a>
+          <a class="btn btn-glass" href="#list">List My Car</a>
+        </div>
+
+        <div class="trust-row">
+          <div><strong>100+</strong><span>Vehicles</span></div>
+          <div><strong>24/7</strong><span>Booking</span></div>
+          <div><strong>4.9/5</strong><span>Reviews</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-ring"></div>
+        <div class="floating-chip chip-top">✦ Verified vehicles</div>
+        <div class="car-display"><img src="car.jpg" alt="Featured Car" width="300" height="200"></div>
+        <div class="floating-chip chip-bottom">● Available today</div>
+      </div>
+    </section>
+
+    <!-- RENT -->
+    <section class="page-section" id="rent">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">RENT A CAR</span>
+          <h2>Find your next ride.</h2>
+        </div>
+        <p>Search, compare and request the vehicle that fits your trip.</p>
+      </div>
+
+      <form class="glass search-panel" id="searchForm">
+        <div class="input-group">
+          <label for="pickup">Pick-up location</label>
+          <input id="pickup" type="text" placeholder="Cape Town" required>
+        </div>
+        <div class="input-group">
+          <label for="startDate">Start date</label>
+          <input id="startDate" type="date" required>
+        </div>
+        <div class="input-group">
+          <label for="endDate">Return date</label>
+          <input id="endDate" type="date" required>
+        </div>
+        <div class="input-group">
+          <label for="vehicleFilter">Vehicle</label>
+          <select id="vehicleFilter">
+            <option value="all">All vehicles</option>
+            <option value="economy">Economy</option>
+            <option value="suv">SUV</option>
+            <option value="luxury">Luxury</option>
+          </select>
+        </div>
+        <button class="btn btn-primary search-btn" type="submit">Search</button>
+      </form>
+      <div id="searchResult" class="form-message"></div>
+
+      <div class="vehicle-grid" id="vehicleGrid">
+        <article class="vehicle-card glass" data-category="economy">
+          <div class="vehicle-image economy-bg">
+            <span class="vehicle-badge">ECONOMY</span>
+            <span class="vehicle-emoji"><img src="Toyota.png" alt="Toyota Starlet" width="300" height="200"></span>
+          </div>
+          <div class="vehicle-content">
+            <div class="vehicle-meta"><span>Automatic</span><span>5 Seats</span><span>Petrol</span></div>
+            <h3>Toyota Starlet</h3>
+            <div class="vehicle-bottom">
+              <div><strong>R450</strong><small>/ day</small></div>
+              <button class="outline-btn book-btn" data-car="Toyota Starlet" data-price="R450">Book</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vehicle-card glass" data-category="suv">
+          <div class="vehicle-image suv-bg">
+            <span class="vehicle-badge">SUV</span>
+            <span class="vehicle-emoji"><img src="Volkswagen T-Roc.jpg" alt="Volkswagen T-Roc" width="300" height="200"></span>
+          </div>
+          <div class="vehicle-content">
+            <div class="vehicle-meta"><span>Automatic</span><span>5 Seats</span><span>Petrol</span></div>
+            <h3>Volkswagen T-Roc</h3>
+            <div class="vehicle-bottom">
+              <div><strong>R850</strong><small>/ day</small></div>
+              <button class="outline-btn book-btn" data-car="Volkswagen T-Roc" data-price="R850">Book</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="vehicle-card glass" data-category="luxury">
+          <div class="vehicle-image luxury-bg">
+            <span class="vehicle-badge">LUXURY</span>
+            <span class="vehicle-emoji"><img src="BMW 3- series.jpeg" alt="BMW 3 Series" width="300" height="200"></span>
+          </div>
+          <div class="vehicle-content">
+            <div class="vehicle-meta"><span>Automatic</span><span>5 Seats</span><span>Petrol</span></div>
+            <h3>BMW 3 Series</h3>
+            <div class="vehicle-bottom">
+              <div><strong>R1,200</strong><small>/ day</small></div>
+              <button class="outline-btn book-btn" data-car="BMW 3 Series" data-price="R1,200">Book</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LIST YOUR CAR -->
+    <section class="page-section owner-section" id="list">
+      <div class="owner-intro">
+        <span class="eyebrow">LIST YOUR CAR</span>
+        <h2>Your car is sitting.<br><em>Let it work.</em></h2>
+        <p>Don't use your vehicle every day? Register it with DriveX and make it available to approved renters when it suits you.</p>
+        <div class="mini-points">
+          <span>✓ Choose availability</span>
+          <span>✓ Set your price</span>
+          <span>✓ Manage requests</span>
+        </div>
+      </div>
+
+      <form class="glass owner-form" id="ownerForm">
+        <div class="form-title">
+          <span class="form-icon">＋</span>
+          <div><strong>Register your vehicle</strong><small>Tell us about your car</small></div>
+        </div>
+
+        <div class="form-grid">
+          <div class="input-group">
+            <label for="ownerName">Full name</label>
+            <input id="ownerName" type="text" placeholder="Your name" required>
+          </div>
+          <div class="input-group">
+            <label for="ownerPhone">Phone</label>
+            <input id="ownerPhone" type="tel" placeholder="082 000 0000" required>
+          </div>
+          <div class="input-group">
+            <label for="carMake">Car make</label>
+            <input id="carMake" type="text" placeholder="Toyota" required>
+          </div>
+          <div class="input-group">
+            <label for="carModel">Car model</label>
+            <input id="carModel" type="text" placeholder="Corolla" required>
+          </div>
+          <div class="input-group">
+            <label for="carYear">Year</label>
+            <input id="carYear" type="number" min="1990" max="2030" placeholder="2022" required>
+          </div>
+          <div class="input-group">
+            <label for="carPrice">Daily price (R)</label>
+            <input id="carPrice" type="number" min="1" placeholder="600" required>
+          </div>
+        </div>
+
+        <div class="upload-box">
+          <input id="carPhotos" type="file" accept="image/*" multiple hidden>
+          <label for="carPhotos">＋ <span>Add vehicle photos</span><small>Front, back and interior</small></label>
+        </div>
+
+        <label class="check-row">
+          <input type="checkbox" id="ownerTerms" required>
+          <span>I confirm that the vehicle information is accurate.</span>
+        </label>
+
+        <button class="btn btn-primary full" type="submit">Submit Vehicle</button>
+        <div id="ownerMessage" class="form-message"></div>
+      </form>
+    </section>
+
+    <!-- SERVICES & CONTACT -->
+    <section class="page-section" id="services">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">SERVICES</span>
+          <h2>Keep every journey moving.</h2>
+        </div>
+        <p>Rental, vehicle sharing and workshop support under one roof.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card glass"><span>🔧</span><h3>Vehicle Service</h3><p>Routine maintenance and vehicle checks.</p></article>
+        <article class="service-card glass"><span>🛞</span><h3>Tyres & Brakes</h3><p>Tyre inspections and brake checks.</p></article>
+        <article class="service-card glass"><span>🔋</span><h3>Battery Support</h3><p>Battery testing and replacement support.</p></article>
+        <article class="service-card glass"><span>🧰</span><h3>Diagnostics</h3><p>Basic diagnostics for warning lights and faults.</p></article>
+      </div>
+
+      <!-- REVIEWS -->
+      <div class="review-head">
+        <div>
+          <span class="eyebrow">CUSTOMER REVIEWS</span>
+          <h2>Real experiences.</h2>
+        </div>
+        <button class="btn btn-glass dark-btn" id="openReview">Write a review</button>
+      </div>
+
+      <div class="review-grid" id="reviewGrid">
+        <article class="review-card glass">
+          <div class="stars">★★★★★</div>
+          <p>“The booking process was simple and the car was clean when I collected it.”</p>
+          <strong>Michael D.</strong><span>Verified renter</span>
+        </article>
+        <article class="review-card glass">
+          <div class="stars">★★★★★</div>
+          <p>“I like being able to make my car available only on the days I don't need it.”</p>
+          <strong>Sarah M.</strong><span>Vehicle owner</span>
+        </article>
+        <article class="review-card glass">
+          <div class="stars">★★★★☆</div>
+          <p>“Friendly service and quick communication. The vehicle matched the listing.”</p>
+          <strong>Thabo K.</strong><span>Verified renter</span>
+        </article>
+      </div>
+
+      <!-- LOCATION -->
+      <div class="location-wrap glass">
+        <div class="map-panel">
+          <div class="map-grid"></div>
+          <div class="map-pin">●</div>
+          <div class="map-label">DriveX<br><small>Cape Town</small></div>
+        </div>
+        <div class="contact-details">
+          <span class="eyebrow">FIND US</span>
+          <h2>Come say hello.</h2>
+          <div class="contact-list">
+            <a href="tel:+27210000000"><span>☎</span> +27 21 000 0000</a>
+            <a href="mailto:hello@drivex.co.za"><span>✉</span> hello@drivex.co.za</a>
+            <span><span>⌖</span> Cape Town, Western Cape, South Africa</span>
+            <span><span>◷</span> Mon – Sat • 08:00 – 17:00</span>
+          </div>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="TikTok">TK</a>
+          </div>
+          <a class="outline-btn map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Cape+Town+Western+Cape+South+Africa">Open in Maps ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="#home"><span class="brand-mark">DX</span><span>DRIVE<span>X</span></span></a>
+        <p>Rent. Share. Drive.</p>
+      </div>
+      <div class="footer-column"><strong>Explore</strong><a href="#rent">Rent a Car</a><a href="#list">List Your Car</a><a href="#services">Services</a></div>
+      <div class="footer-column"><strong>Contact</strong><a href="tel:+27210000000">+27 21 000 0000</a><a href="mailto:hello@drivex.co.za">hello@drivex.co.za</a><span>Cape Town, South Africa</span></div>
+      <div class="footer-column"><strong>Social</strong><div class="footer-social"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">TikTok</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DriveX. Demo website.</span><span>Privacy • Terms</span></div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal hidden" id="modal">
+    <div class="modal-box glass">
+      <button class="modal-close" id="closeModal">×</button>
+      <span class="eyebrow" id="modalEyebrow">BOOKING</span>
+      <h2 id="modalTitle">Book your car</h2>
+      <form id="modalForm">
+        <div class="input-group"><label for="modalName">Full name</label><input id="modalName" type="text" required></div>
+        <div class="input-group"><label for="modalEmail">Email</label><input id="modalEmail" type="email" required></div>
+        <div class="input-group"><label for="modalPhone">Phone</label><input id="modalPhone" type="tel" required></div>
+        <div class="input-group"><label for="modalChoice">Vehicle / request</label><input id="modalChoice" type="text" readonly></div>
+        <button class="btn btn-primary full" type="submit">Send Request</button>
+        <div id="modalMessage" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- REVIEW MODAL -->
+  <div class="modal hidden" id="reviewModal">
+    <div class="modal-box glass">
+      <button class="modal-close" id="closeReview">×</button>
+      <span class="eyebrow">YOUR EXPERIENCE</span>
+      <h2>Leave a review.</h2>
+      <form id="reviewForm">
+        <div class="input-group"><label for="reviewName">Name</label><input id="reviewName" type="text" placeholder="Your name" required></div>
+        <div class="rating-input" id="ratingInput" aria-label="Choose rating">
+          <button type="button" data-rating="1">★</button><button type="button" data-rating="2">★</button><button type="button" data-rating="3">★</button><button type="button" data-rating="4">★</button><button type="button" data-rating="5">★</button>
+        </div>
+        <div class="input-group"><label for="reviewText">Your review</label><textarea id="reviewText" rows="4" maxlength="300" placeholder="Tell us about your experience..." required></textarea></div>
+        <button class="btn btn-primary full" type="submit">Publish Review</button>
+        <div id="reviewMessage" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
